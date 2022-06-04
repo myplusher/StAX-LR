@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns="http://namespacedmitriev.com/State"
+     xsi:schemaLocation="http://namespacedmitriev.com/State state.xsd"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <states>
+       <state id="1">
+           <sensor_value data_type="Влажность в процентах">
+               <sid>1</sid>
+               <value>70</value>
+           </sensor_value>
+           <sensor_value data_type="Температура в градусах">
+               <sid>2</sid>
+               <value>22</value>
+           </sensor_value>
+           <time>2022-06-05T20:32:12</time>
+       </state>
+       <state id="2">
+           <sensor_value data_type="Влажность в процентах">
+               <sid>1</sid>
+               <value>80</value>
+           </sensor_value>
+           <sensor_value data_type="Температура в градусах">
+               <sid>2</sid>
+               <value>23</value>
+           </sensor_value>
+           <time>2022-06-04T20:32:12</time>
+       </state>
+   </states>
+    <location id="1" location_type="древообрабатывающий" address="Владимир, Сладкого" square="10">
+        <description>Деревообрабатывающий цех (ДЦ) предназначен для изготовления досок из цельных стволов дерева и их обработки. Данный цех является частью комбината, осуществляющего производство мебели. Деревообрабатывающий цех имеет собственную комплектную трансформаторную подстанцию (КТП).</description>
+        <sensor id="1">
+            <name>Гигрометр</name>
+        </sensor>
+        <sensor id="2">
+            <name>Термометр</name>
+        </sensor>
+        <device id="1" device_name="кондиционер"/>
+        <device id="2" device_name="увлажнитель"/>
+    </location>
+    <location id="2" location_type="электро" address="Владимир, Горького" square="100.5">
+        <description>Минимальная допустимая площадь серверной — 12 кв. м. Потолок помещения должен иметь высоту как минимум 2,44 м. Рассчитывая площадь комнаты на этапе её проектирования, нужно учитывать то, сколько оборудования в ней будет установлено, и сколько сотрудников работать. Рекомендуется отводить под серверную комнату помещение, не имеющее окон. Если это условие соблюдается, оборудование получит дополнительную защиту от солнечного света и несанкционированного проникновения. Высота двери должна составлять как минимум 2 м, ширина — как минимум 0,91 м. Дверь должна раздвигаться или открываться наружу, в ней должен быть надёжный замок.</description>
+        <sensor id="1">
+            <name>Термометр</name>
+        </sensor>
+        <device id="2" device_name="кондиционер"/>
+    </location>
+</root>

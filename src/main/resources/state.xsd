@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:rt="http://namespacedmitriev.com/State"
+           targetNamespace="http://namespacedmitriev.com/State"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="states" type="rt:States"/>
+                <xs:element name="location" type="rt:Location" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="Device">
+        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+        <xs:attribute name="device_name" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="Location">
+        <xs:sequence>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="sensor" type="rt:Sensor" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="device" type="rt:Device" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+        <xs:attribute name="location_type" type="xs:string" use="required"/>
+        <xs:attribute name="square" type="xs:decimal"/>
+        <xs:attribute name="address" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="Sensor">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="States">
+        <xs:sequence>
+            <xs:element name="state" type="rt:State" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="State">
+        <xs:sequence>
+            <xs:element name="sensor_value" type="rt:Sensor_value" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="time" type="xs:dateTime"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="Sensor_value">
+        <xs:sequence>
+            <xs:element name="sid" type="xs:int"/>
+            <xs:element name="value" type="xs:int"/>
+        </xs:sequence>
+        <xs:attribute name="data_type" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:schema>
